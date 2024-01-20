@@ -4,8 +4,9 @@ function fish_prompt
   # Retrieving status of last command
   # Directly using it to set colors for displaying prompt symbols
   test $status -ne 0;
-    and set -l last_status_colors 666 aaa f02093
-    or set -l last_status_colors 666 aaa 03adf1
+    and set -l last_status_colors f02093
+    or set -l last_status_colors 03adf1
+
 
   # Defining some helper functions for playing with colors.
   # Thanks to http://www.colourlovers.com/palette/4537580/lisa_frank_rainbow~ for the colors inspiration :)
@@ -65,7 +66,7 @@ function fish_prompt
 
   # Finally display the prompt symbols
   for color in $last_status_colors
-    echo -n (set_color $color)">"
+    echo -n (set_color $color)"⋊>"
   end
 
   # And one last space. It does everything.
